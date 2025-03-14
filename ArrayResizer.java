@@ -18,7 +18,7 @@ public class ArrayResizer {
     */
     public static int numNonZeroRows(int[][] array2D){
         int count = 0;
-        for(int i=0; i<array2D[0].length; i++){
+        for(int i=0; i<array2D.length; i++){
             if(isNonZeroRow(array2D, i)){
                 count++;
             }
@@ -30,6 +30,17 @@ public class ArrayResizer {
     * Precondition: array2D contains at least one column and at least one row with no zeros.
     * Postcondition: array2D is unchanged.
     */
-    public static int[][] resize(int[][] array2D)
-    { /* to be implemented in part (b) */ }
+    public static int[][] resize(int[][] array2D){
+        int[][] smaller = new int[numNonZeroRows(array2D)][array2D.length];
+        int count = 0;
+        for(int i=0; i<array2D.length; i++){
+            if(isNonZeroRow(array2D, i)){
+                count++;
+                for(int j=count; j<smaller.length; j++){
+                    smaller[j] = array2D[i];
+                }
+            }
+        }
+        return smaller;
+    }
 }
