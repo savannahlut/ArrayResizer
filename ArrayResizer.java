@@ -31,9 +31,9 @@ public class ArrayResizer {
     * Postcondition: array2D is unchanged.
     */
     public static int[][] resize(int[][] array2D){
-        int[][] smaller = new int[numNonZeroRows(array2D)][array2D.length];
-        int count = 0;
-        for(int i=0; i<array2D.length; i++){
+        int[][] smaller = new int[numNonZeroRows(array2D)][array2D[0].length];
+        int count = -1;
+        for(int i=0; i < array2D.length; i++){
             if(isNonZeroRow(array2D, i)){
                 count++;
                 for(int j=count; j<smaller.length; j++){

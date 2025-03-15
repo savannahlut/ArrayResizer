@@ -8,5 +8,14 @@ public class Main{
         System.out.println(ArrayResizer.isNonZeroRow(arr, 1));
         System.out.println(ArrayResizer.isNonZeroRow(arr, 2));
         System.out.println(ArrayResizer.isNonZeroRow(arr, 3));
+
+        int[][] smaller = ArrayResizer.resize(arr);
+        System.out.println(smaller);
+        for (int i = 0; i < smaller.length; i++) {
+            for (int j = 0; j < smaller[i].length; j++) {
+                System.out.print(smaller[i][j] + " ");
+            }
+            System.out.println();
+        }
     }
 }
